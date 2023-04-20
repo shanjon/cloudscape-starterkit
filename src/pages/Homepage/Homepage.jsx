@@ -17,6 +17,7 @@ import {
   sideNavHeader,
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
+import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -24,7 +25,9 @@ import "@cloudscape-design/global-styles/index.css"
 function Homepage() {
   return (
     <div>
-    <TopNavigation />
+    <TopNavigation
+      topNavHeader={topNavHeader}
+      topNavMenu={topNavMenu}/>
     <AppLayout
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}

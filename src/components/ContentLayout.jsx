@@ -4,22 +4,22 @@ import Container from "@cloudscape-design/components/container";
 import Header from "@cloudscape-design/components/header";
 import SpaceBetween from "@cloudscape-design/components/space-between";
 import Link from "@cloudscape-design/components/link";
-import Button from "@cloudscape-design/components/button";
 import Alert from "@cloudscape-design/components/alert";
 
-export default ({pageDescription, pageHeader, alert, containerHeader, containerDescription, containerContent}) => {
+export default ({
+  pageDescription,
+  pageHeader,
+  alert,
+  containerHeader,
+  containerDescription,
+  containerContent}) => {
   return (
     <ContentLayout
       header={
         <SpaceBetween size="m">
           <Header
             variant="h1"
-            // leaving info out for now
-            // info={<Link>Info</Link>}
             description={pageDescription}
-            actions={
-              <Button variant="primary">Button</Button>
-            }
           >
             {pageHeader}
           </Header>
