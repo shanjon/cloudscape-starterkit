@@ -3,7 +3,7 @@
 
 // Top Navigation Header (Left Side)
 export const topNavHeader = {
-    href: "#",
+    href: "/",
     title: "Top Nav Header",
     logo: {
       src:

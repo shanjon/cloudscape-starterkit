@@ -1,18 +1,18 @@
 import * as React from "react";
 import SideNavigation from "@cloudscape-design/components/side-navigation";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default ({sideNavHeader, sideNavPages}) => {
-  const [activeHref, setActiveHref] = React.useState(
-    "#/page1"
-  );
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <SideNavigation
-      activeHref={activeHref}
       header={sideNavHeader}
+      activeHref={location.pathname}
       onFollow={event => {
         if (!event.detail.external) {
           event.preventDefault();
-          setActiveHref(event.detail.href);
+          navigate(event.detail.href)
         }
       }}
       items={sideNavPages}
