@@ -18,6 +18,9 @@ import {
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
+import Table from "../../components/Table/Table";
+
+
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -35,10 +38,9 @@ function TableView() {
       content={<ContentLayout
         pageDescription={pageDescription}
         pageHeader={pageHeader}
-        alert={alert}
         containerHeader={containerHeader}
         containerDescription={containerDescription}
-        containerContent={containerContent}
+        containerContent={<Table />}
       />}
     />
     </div>

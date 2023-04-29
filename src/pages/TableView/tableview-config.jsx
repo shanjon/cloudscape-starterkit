@@ -1,4 +1,27 @@
-// Page Header
+// Column Definitions
+export const columnDefinitions = [
+    {
+      id: "variable",
+      header: "Variable name",
+      cell: e => e.name,
+      sortingField: "name"
+    },
+    {
+      id: "value",
+      header: "Text value",
+      cell: e => e.alt,
+      sortingField: "alt"
+    },
+    { id: "type", header: "Type", cell: e => e.type },
+    {
+      id: "description",
+      header: "Description",
+      cell: e => e.description
+    }
+  ];
+
+
+  // Page Header
 export const pageHeader = "Table View"
 
 // Info - leave out for now

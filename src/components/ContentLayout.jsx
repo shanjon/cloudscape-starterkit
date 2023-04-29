@@ -24,10 +24,11 @@ export default ({
             {pageHeader}
           </Header>
 
-          <Alert header={alert}> </Alert>
+          {alert && <Alert header={alert} />}
         </SpaceBetween>
       }
     >
+      {containerHeader && (
       <Container
         header={
           <Header
@@ -40,6 +41,7 @@ export default ({
       >
         {containerContent}
       </Container>
+      )}
     </ContentLayout>
   );
 }
