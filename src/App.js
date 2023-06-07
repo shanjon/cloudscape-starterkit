@@ -7,6 +7,7 @@ import { Link } from "react-router";
 // Components
 import Homepage from './pages/Homepage/Homepage';
 import TableView from './pages/TableView/TableView';
+import DetailsView from './pages/DetailsView/DetailsView';
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/tableview" element={<TableView />} />
+        <Route path="/detailsview" element={<DetailsView />} />
       </Routes>
     </Router>
     </div>

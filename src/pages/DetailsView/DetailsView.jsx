@@ -1,20 +1,18 @@
 import logo from '../../logo.svg';
 import '../../App.css';
-import {
-  Button,
-  AppLayout,
-  Header
- } from "@cloudscape-design/components"
+import Button from "@cloudscape-design/components/button"
+import AppLayout from "@cloudscape-design/components/app-layout";
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
 import ContentLayout from "../../components/ContentLayout";
 import {
-  tableHeader,
-  searchPlaceholder,
-  columnDefinitions,
-  columnDisplay,
-  columnItems
-} from "./tableview-config.jsx";
+  pageHeader,
+  pageDescription,
+  alert,
+  containerHeader,
+  containerDescription,
+  containerContent
+} from "./detailsview-config.jsx";
 import {
   sideNavHeader,
   sideNavPages
@@ -23,10 +21,11 @@ import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-
 import Table from "../../components/Table/Table";
 
 
+
 // Styles
 import "@cloudscape-design/global-styles/index.css"
 
-function TableView() {
+function DetailsView() {
   return (
     <div>
     <TopNavigation
@@ -36,17 +35,16 @@ function TableView() {
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}
         sideNavPages={sideNavPages}/>}
-      content={<Table
-          variant="full-page"
-          tableHeader={tableHeader}
-          searchPlaceholder={searchPlaceholder}
-          columnDefinitions={columnDefinitions}
-          columnDisplay={columnDisplay}
-          columnItems={columnItems}
+      content={<ContentLayout
+        pageDescription={pageDescription}
+        pageHeader={pageHeader}
+        containerHeader={containerHeader}
+        containerDescription={containerDescription}
+        containerContent={<Table />}
       />}
     />
     </div>
   );
 }
 
-export default TableView;
+export default DetailsView;

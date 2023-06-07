@@ -4,16 +4,18 @@ import Box from "@cloudscape-design/components/box";
 import Button from "@cloudscape-design/components/button";
 import TextFilter from "@cloudscape-design/components/text-filter";
 import Header from "@cloudscape-design/components/header";
-import SpaceBetween from "@cloudscape-design/components/space-between";
-import ButtonDropdown from "@cloudscape-design/components/button-dropdown";
 import Pagination from "@cloudscape-design/components/pagination";
 import CollectionPreferences from "@cloudscape-design/components/collection-preferences";
 
-export default () => {
-  const [
-    selectedItems,
-    setSelectedItems
-  ] = React.useState([{ name: "Item 2" }]);
+export default ({
+  tableHeader,
+  searchPlaceholder,
+  columnDefinitions,
+  columnDisplay,
+  columnItems,
+  }) => {
+    const [selectedItems, setSelectedItems] = React.useState([{ name: "Item 2" }]);
+    //const [selectedItems, setSelectedItems] = React.useState([columnItems[0]]);
   return (
     <Table
       onSelectionChange={({ detail }) =>
@@ -35,80 +37,13 @@ export default () => {
           } selected`;
         }
       }}
-      columnDefinitions={[
-        {
-          id: "variable",
-          header: "Variable name",
-          cell: e => e.name,
-          sortingField: "name"
-        },
-        {
-          id: "value",
-          header: "Text value",
-          cell: e => e.alt,
-          sortingField: "alt"
-        },
-        { id: "type", header: "Type", cell: e => e.type },
-        {
-          id: "description",
-          header: "Description",
-          cell: e => e.description
-        }
-      ]}
-      items={[
-        {
-          name: "Item 1",
-          alt: "First",
-          description: "This is the first item",
-          type: "1A",
-          size: "Small"
-        },
-        {
-          name: "Item 2",
-          alt: "Second",
-          description: "This is the second item",
-          type: "1B",
-          size: "Large"
-        },
-        {
-          name: "Item 3",
-          alt: "Third",
-          description: "-",
-          type: "1A",
-          size: "Large"
-        },
-        {
-          name: "Item 4",
-          alt: "Fourth",
-          description: "This is the fourth item",
-          type: "2A",
-          size: "Small"
-        },
-        {
-          name: "Item 5",
-          alt: "-",
-          description:
-            "This is the fifth item with a longer description",
-          type: "2A",
-          size: "Large"
-        },
-        {
-          name: "Item 6",
-          alt: "Sixth",
-          description: "This is the sixth item",
-          type: "1A",
-          size: "Small"
-        }
-      ]}
+      columnDefinitions={columnDefinitions}
+      columnDisplay={columnDisplay}
+      items={columnItems}
       loadingText="Loading resources"
-      selectionType="multi"
-      trackBy="name"
-      visibleColumns={[
-        "variable",
-        "value",
-        "type",
-        "description"
-      ]}
+      selectionType="single"
+      stickyHeader
+      variant="full-page"
       empty={
         <Box textAlign="center" color="inherit">
           <b>No resources</b>
@@ -124,79 +59,18 @@ export default () => {
       }
       filter={
         <TextFilter
-          filteringPlaceholder="Find resources"
+          filteringPlaceholder={searchPlaceholder}
           filteringText=""
         />
       }
       header={
         <Header
-          counter={
-            selectedItems.length
-              ? "(" + selectedItems.length + "/10)"
-              : "(10)"
-          }
-          actions={
-            <SpaceBetween
-              direction="horizontal"
-              size="xs"
-            >
-              <ButtonDropdown
-                items={[
-                  {
-                    text: "Deactivate",
-                    id: "rm",
-                    disabled: false
-                  },
-                  {
-                    text: "Activate",
-                    id: "mv",
-                    disabled: false
-                  },
-                  {
-                    text: "Status 3",
-                    id: "rn",
-                    disabled: false
-                  },
-                  {
-                    text: "View details",
-                    id: "rm",
-                    disabled: false
-                  },
-                  {
-                    text: "Edit",
-                    id: "mv",
-                    disabled: false
-                  },
-                  {
-                    text: "Delete",
-                    id: "rn",
-                    disabled: false
-                  }
-                ]}
-              >
-                Actions
-              </ButtonDropdown>
-              <Button>Secondary button</Button>
-              <Button variant="primary">
-                Create resource
-              </Button>
-            </SpaceBetween>
-          }
-        >
-          Table with action buttons
+          variant="awsui-h1-sticky">
+          {tableHeader}
         </Header>
       }
       pagination={
-        <Pagination
-          currentPageIndex={1}
-          pagesCount={2}
-          ariaLabels={{
-            nextPageLabel: "Next page",
-            previousPageLabel: "Previous page",
-            pageLabel: pageNumber =>
-              `Page ${pageNumber} of all pages`
-          }}
-        />
+        <Pagination currentPageIndex={1} pagesCount={1} />
       }
       preferences={
         <CollectionPreferences
@@ -205,11 +79,11 @@ export default () => {
           cancelLabel="Cancel"
           preferences={{
             pageSize: 10,
-            visibleContent: [
-              "variable",
-              "value",
-              "type",
-              "description"
+            contentDisplay: [
+              { id: "variable", visible: true },
+              { id: "value", visible: true },
+              { id: "type", visible: true },
+              { id: "description", visible: true }
             ]
           }}
           pageSizePreference={{
@@ -219,41 +93,41 @@ export default () => {
               { value: 20, label: "20 resources" }
             ]
           }}
-          wrapLinesPreference={{
-            label: "Wrap lines",
-            description:
-              "Select to see all the text and wrap the lines"
-          }}
-          stripedRowsPreference={{
-            label: "Striped rows",
-            description:
-              "Select to add alternating shaded rows"
-          }}
-          contentDensityPreference={{
-            label: "Compact mode",
-            description:
-              "Select to display content in a denser, more compact mode"
-          }}
-          visibleContentPreference={{
-            title: "Select visible content",
+          wrapLinesPreference={{}}
+          stripedRowsPreference={{}}
+          contentDensityPreference={{}}
+          contentDisplayPreference={{
             options: [
               {
-                label: "Main distribution properties",
-                options: [
-                  {
-                    id: "variable",
-                    label: "Variable name",
-                    editable: false
-                  },
-                  { id: "value", label: "Text value" },
-                  { id: "type", label: "Type" },
-                  {
-                    id: "description",
-                    label: "Description"
-                  }
-                ]
-              }
+                id: "variable",
+                label: "Variable name",
+                alwaysVisible: true
+              },
+              { id: "value", label: "Text value" },
+              { id: "type", label: "Type" },
+              { id: "description", label: "Description" }
             ]
+          }}
+          stickyColumnsPreference={{
+            firstColumns: {
+              title: "Stick first column(s)",
+              description:
+                "Keep the first column(s) visible while horizontally scrolling the table content.",
+              options: [
+                { label: "None", value: 0 },
+                { label: "First column", value: 1 },
+                { label: "First two columns", value: 2 }
+              ]
+            },
+            lastColumns: {
+              title: "Stick last column",
+              description:
+                "Keep the last column visible while horizontally scrolling the table content.",
+              options: [
+                { label: "None", value: 0 },
+                { label: "Last column", value: 1 }
+              ]
+            }
           }}
         />
       }
