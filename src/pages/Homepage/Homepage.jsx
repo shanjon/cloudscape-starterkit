@@ -1,7 +1,9 @@
 import logo from '../../logo.svg';
 import '../../App.css';
-import Button from "@cloudscape-design/components/button"
-import AppLayout from "@cloudscape-design/components/app-layout";
+import {
+  Button,
+  AppLayout
+} from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
 import ContentLayout from "../../components/ContentLayout";
@@ -18,6 +20,7 @@ import {
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
+import Container from "../../components/Containers/Container";
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -32,14 +35,20 @@ function Homepage() {
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}
         sideNavPages={sideNavPages}/>}
-      content={<ContentLayout
-        pageDescription={pageDescription}
-        pageHeader={pageHeader}
-        alert={alert}
-        containerHeader={containerHeader}
-        containerDescription={containerDescription}
-        containerContent={containerContent}
-      />}
+      content={
+        <div>
+        <ContentLayout
+          pageDescription={pageDescription}
+          pageHeader={pageHeader}
+          alert={alert}
+        />
+        <Container
+          containerHeader={containerHeader}
+          containerDescription={containerDescription}
+          containerContent={containerContent}
+        />
+        </div>
+      }
     />
     </div>
   );

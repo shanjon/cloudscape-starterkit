@@ -10,10 +10,12 @@ import SideNavigation from "../../components/SideNavigation/SideNav";
 import ContentLayout from "../../components/ContentLayout";
 import {
   tableHeader,
-  searchPlaceholder,
+  filterPlaceholder,
   columnDefinitions,
   columnDisplay,
-  columnItems
+  columnItems,
+  buttonLabel,
+  buttonOptions
 } from "./tableview-config.jsx";
 import {
   sideNavHeader,
@@ -39,10 +41,12 @@ function TableView() {
       content={<Table
           variant="full-page"
           tableHeader={tableHeader}
-          searchPlaceholder={searchPlaceholder}
+          filterPlaceholder={filterPlaceholder}
           columnDefinitions={columnDefinitions}
           columnDisplay={columnDisplay}
           columnItems={columnItems}
+          buttonLabel={buttonLabel}
+          buttonOptions={buttonOptions}
       />}
     />
     </div>

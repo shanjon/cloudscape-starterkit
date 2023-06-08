@@ -1,8 +1,8 @@
 // Table Header
 export const tableHeader = "Table Header"
 
-// Table Search Placeholder
-export const searchPlaceholder = "What are you looking for?"
+// Table Filter Placeholder
+export const filterPlaceholder = "What are you looking for?"
 
 // Column Definitions
 export const columnDefinitions = [
@@ -35,7 +35,7 @@ export const columnDisplay=[
   { id: "description", visible: true }
 ]
 
-// Items
+// Table Items
 export const columnItems=[
   {
     name: "Item 1",
@@ -81,3 +81,13 @@ export const columnItems=[
     size: "Small"
   }
 ]
+
+// Button Label
+export const buttonLabel = "Button Label"
+
+// Button Options
+export const buttonOptions = [
+    { text: "View", id: "vw", disabled: false },
+    { text: "Delete", id: "rm", disabled: false },
+    { text: "Rename", id: "rn", disabled: true },
+  ]

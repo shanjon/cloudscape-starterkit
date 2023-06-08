@@ -1,21 +1,27 @@
 import * as React from "react";
-import Table from "@cloudscape-design/components/table";
-import Box from "@cloudscape-design/components/box";
-import Button from "@cloudscape-design/components/button";
-import TextFilter from "@cloudscape-design/components/text-filter";
-import Header from "@cloudscape-design/components/header";
-import Pagination from "@cloudscape-design/components/pagination";
-import CollectionPreferences from "@cloudscape-design/components/collection-preferences";
+import {
+  Table,
+  Box,
+  Button,
+  TextFilter,
+  Header,
+  Pagination,
+  CollectionPreferences,
+  SpaceBetween,
+  ButtonDropdown
+} from "@cloudscape-design/components";
 
 export default ({
   tableHeader,
-  searchPlaceholder,
+  filterPlaceholder,
   columnDefinitions,
   columnDisplay,
   columnItems,
+  buttonLabel,
+  buttonOptions
   }) => {
-    const [selectedItems, setSelectedItems] = React.useState([{ name: "Item 2" }]);
-    //const [selectedItems, setSelectedItems] = React.useState([columnItems[0]]);
+    const [selectedItems, setSelectedItems] = React.useState([]);
+    const [filteringText, setFilteringText] = React.useState("");
   return (
     <Table
       onSelectionChange={({ detail }) =>
@@ -59,13 +65,29 @@ export default ({
       }
       filter={
         <TextFilter
-          filteringPlaceholder={searchPlaceholder}
-          filteringText=""
+          filteringPlaceholder={filterPlaceholder}
+          filteringText={filteringText}
+          onChange={({ detail }) =>
+            setFilteringText(detail.filteringText)
+          }
         />
       }
       header={
         <Header
-          variant="awsui-h1-sticky">
+          variant="awsui-h1-sticky"
+          actions={
+            <SpaceBetween
+              direction="horizontal"
+              size="xs"
+            >
+              <ButtonDropdown
+                items={buttonOptions}
+              >
+                {buttonLabel}
+              </ButtonDropdown>
+            </SpaceBetween>
+          }
+          >
           {tableHeader}
         </Header>
       }
