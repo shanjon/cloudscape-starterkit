@@ -5,6 +5,7 @@ export const sideNavHeader = { href: "/", text: "Side Nav Header" };
 export const sideNavPages = [
     { type: "link", text: "Homepage", href: "/" },
     { type: "link", text: "Table View", href: "/tableview" },
+    { type: "link", text: "Details View", href: "/detailsview" },
     { type: "divider" },
     {
         type: "link",

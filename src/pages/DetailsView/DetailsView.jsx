@@ -7,7 +7,9 @@ import {
   Header,
   ColumnLayout,
   Box,
-  StatusIndicator
+  StatusIndicator,
+  SpaceBetween,
+  Tabs
 } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
@@ -19,7 +21,8 @@ import {
   containerHeader,
   containerDescription,
   containerContent,
-  columnContainerHeader
+  columnContainerHeader,
+  tabsContent
 } from "./detailsview-config.jsx";
 import {
   sideNavHeader,
@@ -47,9 +50,19 @@ function DetailsPage() {
         pageDescription={pageDescription}
         pageHeader={pageHeader}
         />
+        <SpaceBetween
+        direction="vertical"
+        size="l"
+        >
         <ColumnContainer
         columnContainerHeader={columnContainerHeader}
       />
+      
+        <Tabs
+        tabs={tabsContent}
+        variant="container"
+      />
+      </SpaceBetween>
       </div>
       }
     />

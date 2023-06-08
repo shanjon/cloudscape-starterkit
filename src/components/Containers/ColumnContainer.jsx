@@ -7,7 +7,10 @@ import {
     Header
 } from "@cloudscape-design/components";
 
-export default ({columnContainerHeader}) => {
+export default ({
+  columnContainerHeader,
+  columnContainerItems
+}) => {
   return (
     <Container header={<Header variant="h2">{columnContainerHeader}</Header>}>
     <ColumnLayout columns={4} variant="text-grid">

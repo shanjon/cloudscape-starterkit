@@ -18,34 +18,65 @@ export const pageDescription = "This is the details page description"
 // Column Container Header
 export const columnContainerHeader = "Container Header"
 
-// Column Container Items -> NORA UPDATE THIS
-export const columnContainerItems=[
+// Column Container Definitions
+export const columnContainerDefinitions = [
+  {
+    id: "variable",
+    header: "Variable name",
+    cell: e => e.name,
+    sortingField: "name",
+    isRowHeader: true
+  },
+  {
+    id: "value",
+    header: "Text value",
+    cell: e => e.alt,
+    sortingField: "alt"
+  },
+  { id: "type", header: "Type", cell: e => e.type },
+  {
+    id: "description",
+    header: "Description",
+    cell: e => e.description
+  }
+];
+
+// Column Container Items
+export const columnContainerItems =[
   {
     name: "Item 1",
-    alt: "First",
-    description: "This is the first item",
-    type: "1A",
-    size: "Small"
+    description: "This is the first item"
   },
   {
     name: "Item 2",
-    alt: "Second",
-    description: "This is the second item",
-    type: "1B",
-    size: "Large"
+    description: "This is the second item"
   },
   {
     name: "Item 3",
-    alt: "Third",
-    description: "-",
-    type: "1A",
-    size: "Large"
+    description: "This is the third item"
   },
   {
     name: "Item 4",
-    alt: "Fourth",
-    description: "This is the fourth item",
-    type: "2A",
-    size: "Small"
+    description: "This is the fourth item"
+  }
+]
+
+// Tabs Content
+export const tabsContent = [
+  {
+    label: "First tab label",
+    id: "first",
+    content: "First tab content area"
+  },
+  {
+    label: "Second tab label",
+    id: "second",
+    content: "Second tab content area"
+  },
+  {
+    label: "Third tab label",
+    id: "third",
+    content: "Third tab content area",
+    disabled: true
   }
 ]
