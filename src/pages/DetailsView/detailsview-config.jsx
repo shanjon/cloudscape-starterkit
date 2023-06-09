@@ -80,3 +80,9 @@ export const tabsContent = [
     disabled: true
   }
 ]
+
+export const breadcrumbGroup = [
+  { text: "Homepage", href: "/" },
+  { text: "Table View", href: "#/tableview" },
+  { text: "Details View", href: "#/detailsview"}
+]

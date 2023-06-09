@@ -91,3 +91,8 @@ export const buttonOptions = [
     { text: "Delete", id: "rm", disabled: false },
     { text: "Rename", id: "rn", disabled: true },
   ]
+
+export const breadcrumbGroup = [
+  { text: "Homepage", href: "/" },
+  { text: "Table View", href: "#/tableview" }
+]

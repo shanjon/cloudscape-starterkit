@@ -3,7 +3,8 @@ import '../../App.css';
 import {
   Button,
   AppLayout,
-  Header
+  Header,
+  BreadcrumbGroup
  } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
@@ -15,7 +16,8 @@ import {
   columnDisplay,
   columnItems,
   buttonLabel,
-  buttonOptions
+  buttonOptions,
+  breadcrumbGroup
 } from "./tableview-config.jsx";
 import {
   sideNavHeader,
@@ -35,6 +37,8 @@ function TableView() {
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      breadcrumbs={<BreadcrumbGroup
+        items={breadcrumbGroup} />}
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}
         sideNavPages={sideNavPages}/>}

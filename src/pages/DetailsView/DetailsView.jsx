@@ -9,7 +9,8 @@ import {
   Box,
   StatusIndicator,
   SpaceBetween,
-  Tabs
+  Tabs,
+  BreadcrumbGroup
 } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
@@ -22,7 +23,8 @@ import {
   containerDescription,
   containerContent,
   columnContainerHeader,
-  tabsContent
+  tabsContent,
+  breadcrumbGroup
 } from "./detailsview-config.jsx";
 import {
   sideNavHeader,
@@ -41,6 +43,8 @@ function DetailsPage() {
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      breadcrumbs={<BreadcrumbGroup
+        items={breadcrumbGroup} />}
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}
         sideNavPages={sideNavPages}/>}
