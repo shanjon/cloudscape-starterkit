@@ -13,8 +13,9 @@ import {
   alert,
   containerHeader,
   containerDescription,
-  containerContent
-} from "./homepage-config.jsx";
+  containerContent,
+  testContent
+} from "./anotherone-config.jsx";
 import {
   sideNavHeader,
   sideNavPages
@@ -25,7 +26,7 @@ import Container from "../../components/Containers/Container";
 // Styles
 import "@cloudscape-design/global-styles/index.css"
 
-function Homepage() {
+function AnotherOne() {
   return (
     <div>
     <TopNavigation
@@ -44,7 +45,6 @@ function Homepage() {
           containerHeader={containerHeader}
           containerDescription={containerDescription}
           containerContent={containerContent}
-
         />
         </div>
       }
@@ -53,4 +53,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default AnotherOne;

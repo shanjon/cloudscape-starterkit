@@ -6,6 +6,7 @@ export const sideNavPages = [
     { type: "link", text: "Homepage", href: "/" },
     { type: "link", text: "Table View", href: "/tableview" },
     { type: "link", text: "Details View", href: "/detailsview" },
+    { type: "link", text: "Cards View", href: "/cardsview" },
     { type: "divider" },
     {
         type: "link",

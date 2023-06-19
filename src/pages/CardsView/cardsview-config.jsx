@@ -9,9 +9,6 @@ import {
 // Page Header
 export const pageHeader = "This is the details page header"
 
-// Info - leave out for now
-
-
 // Description
 export const pageDescription = "This is the details page description"
 
@@ -86,12 +83,3 @@ export const breadcrumbGroup = [
   { text: "Table View", href: "#/tableview" },
   { text: "Details View", href: "#/detailsview"}
 ]
-
-// Container Header
-export const containerHeader = "This is the DetailsPage container header"
-
-// Container content
-export const containerDescription = "This is the DetailsPage container description"
-
-// Container description
-export const containerContent = "This is the DetailsPage container content"

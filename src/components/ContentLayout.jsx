@@ -1,15 +1,21 @@
-import * as React from "react";
-import ContentLayout from "@cloudscape-design/components/content-layout";
-import Header from "@cloudscape-design/components/header";
-import SpaceBetween from "@cloudscape-design/components/space-between";
-import Link from "@cloudscape-design/components/link";
-import Alert from "@cloudscape-design/components/alert";
-import Container from "./Containers/Container";
+import {
+  ContentLayout,
+  Container,
+  Header,
+  SpaceBetween,
+  Link,
+  Button,
+  Alert
+} from "@cloudscape-design/components";
 
 export default ({
   pageDescription,
   pageHeader,
-  alert}) => {
+  alert,
+  containerHeader,
+  containerDescription,
+  containerContent
+}) => {
   return (
     <ContentLayout
       header={
@@ -25,6 +31,18 @@ export default ({
         </SpaceBetween>
       }
     >
+      <Container
+        header={
+          <Header
+            variant="h2"
+            description={containerDescription}
+          >
+            {containerHeader}
+          </Header>
+        }
+      >
+        {containerContent}
+      </Container>
     </ContentLayout>
   );
 }

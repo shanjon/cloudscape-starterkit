@@ -2,7 +2,15 @@ import logo from '../../logo.svg';
 import '../../App.css';
 import {
   Button,
-  AppLayout
+  AppLayout,
+  Container,
+  Header,
+  ColumnLayout,
+  Box,
+  StatusIndicator,
+  SpaceBetween,
+  Tabs,
+  BreadcrumbGroup
 } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
@@ -13,44 +21,56 @@ import {
   alert,
   containerHeader,
   containerDescription,
-  containerContent
-} from "./homepage-config.jsx";
+  containerContent,
+  columnContainerHeader,
+  tabsContent,
+  breadcrumbGroup
+} from "./cardsview-config.jsx";
 import {
   sideNavHeader,
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
-import Container from "../../components/Containers/Container";
+import Cards from "../../components/Cards/Cards"
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
 
-function Homepage() {
+function CardsView() {
   return (
     <div>
     <TopNavigation
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      breadcrumbs={<BreadcrumbGroup
+        items={breadcrumbGroup} />}
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}
         sideNavPages={sideNavPages}/>}
       content={
-        <div>
-        <ContentLayout
-          pageDescription={pageDescription}
-          pageHeader={pageHeader}
-          alert={alert}
-          containerHeader={containerHeader}
-          containerDescription={containerDescription}
-          containerContent={containerContent}
-
+      <div>
+      <ContentLayout
+        pageDescription={pageDescription}
+        pageHeader={pageHeader}
         />
-        </div>
+        <SpaceBetween
+        direction="vertical"
+        size="l"
+        >
+        <Cards
+      />
+      
+        <Tabs
+        tabs={tabsContent}
+        variant="container"
+      />
+      </SpaceBetween>
+      </div>
       }
     />
     </div>
   );
 }
 
-export default Homepage;
+export default CardsView;
