@@ -22,9 +22,10 @@ import {
   containerHeader,
   containerDescription,
   containerContent,
-  columnContainerHeader,
-  tabsContent,
-  breadcrumbGroup
+  breadcrumbGroup,
+  cardItems,
+  cardDefinition,
+  filteringPlaceholder
 } from "./cardsview-config.jsx";
 import {
   sideNavHeader,
@@ -50,20 +51,17 @@ function CardsView() {
         sideNavPages={sideNavPages}/>}
       content={
       <div>
+      <SpaceBetween size="l">
       <ContentLayout
         pageDescription={pageDescription}
         pageHeader={pageHeader}
+        shouldRenderContainer={false}
         />
-        <SpaceBetween
-        direction="vertical"
-        size="l"
-        >
         <Cards
-      />
-      
-        <Tabs
-        tabs={tabsContent}
-        variant="container"
+        containerHeader={containerHeader}
+        cardItems={cardItems}
+        cardDefinition={cardDefinition}
+        filteringPlaceholder={filteringPlaceholder}
       />
       </SpaceBetween>
       </div>

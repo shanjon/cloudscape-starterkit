@@ -7,11 +7,14 @@ import Header from "@cloudscape-design/components/header";
 import Pagination from "@cloudscape-design/components/pagination";
 import CollectionPreferences from "@cloudscape-design/components/collection-preferences";
 
-export default () => {
-  const [
-    selectedItems,
-    setSelectedItems
-  ] = React.useState([]);
+export default ({
+  containerHeader,
+  cardDefinition,
+  cardItems,
+  filteringPlaceholder
+}) => {
+  const [selectedItems, setSelectedItems] = React.useState([]);
+  const [filteringText, setFilteringText] = React.useState("");
   return (
     <Cards
       onSelectionChange={({ detail }) =>
@@ -22,74 +25,12 @@ export default () => {
         itemSelectionLabel: (e, n) => `select ${n.name}`,
         selectionGroupLabel: "Item selection"
       }}
-      cardDefinition={{
-        header: e => e.name,
-        sections: [
-          {
-            id: "description",
-            header: "Description",
-            content: e => e.description
-          },
-          {
-            id: "type",
-            header: "Type",
-            content: e => e.type
-          },
-          {
-            id: "size",
-            header: "Size",
-            content: e => e.size
-          }
-        ]
-      }}
+      cardDefinition={cardDefinition}
       cardsPerRow={[
         { cards: 1 },
         { minWidth: 500, cards: 3 }
       ]}
-      items={[
-        {
-          name: "Item 1",
-          alt: "First",
-          description: "This is the first item",
-          type: "1A",
-          size: "Small"
-        },
-        {
-          name: "Item 2",
-          alt: "Second",
-          description: "This is the second item",
-          type: "1B",
-          size: "Large"
-        },
-        {
-          name: "Item 3",
-          alt: "Third",
-          description: "This is the third item",
-          type: "1A",
-          size: "Large"
-        },
-        {
-          name: "Item 4",
-          alt: "Fourth",
-          description: "This is the fourth item",
-          type: "2A",
-          size: "Small"
-        },
-        {
-          name: "Item 5",
-          alt: "Fifth",
-          description: "This is the fifth item",
-          type: "2A",
-          size: "Large"
-        },
-        {
-          name: "Item 6",
-          alt: "Sixth",
-          description: "This is the sixth item",
-          type: "1A",
-          size: "Small"
-        }
-      ]}
+      items={cardItems}
       loadingText="Loading resources"
       selectionType="multi"
       trackBy="name"
@@ -108,7 +49,13 @@ export default () => {
         </Box>
       }
       filter={
-        <TextFilter filteringPlaceholder="Find resources" />
+        <TextFilter
+          filteringPlaceholder={filteringPlaceholder}
+          filteringText={filteringText}
+          onChange={({ detail }) =>
+            setFilteringText(detail.filteringText)
+          }
+        />
       }
       header={
         <Header
@@ -118,7 +65,7 @@ export default () => {
               : "(10)"
           }
         >
-          Common cards with selection
+          {containerHeader}
         </Header>
       }
       pagination={

@@ -14,7 +14,8 @@ export default ({
   alert,
   containerHeader,
   containerDescription,
-  containerContent
+  containerContent,
+  shouldRenderContainer = true // determines Container rendering - renders as default
 }) => {
   return (
     <ContentLayout
@@ -30,19 +31,21 @@ export default ({
           {alert && <Alert header={alert} />}
         </SpaceBetween>
       }
-    >
-      <Container
-        header={
-          <Header
-            variant="h2"
-            description={containerDescription}
-          >
-            {containerHeader}
-          </Header>
-        }
       >
-        {containerContent}
-      </Container>
+      {!shouldRenderContainer ? null : ( // Conditionally render Container component
+        <Container
+          header={
+            <Header
+              variant="h2"
+              description={containerDescription}
+            >
+              {containerHeader}
+            </Header>
+          }
+        >
+          {containerContent}
+        </Container>
+      )}
     </ContentLayout>
   );
 }

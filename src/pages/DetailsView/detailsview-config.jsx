@@ -7,19 +7,13 @@ import {
 } from "@cloudscape-design/components"
 
 // Page Header
-export const pageHeader = "This is the details page header"
-
-// Info - leave out for now
-
+export const pageHeader = "This is the details view header"
 
 // Description
-export const pageDescription = "This is the details page description"
-
-// Column Container Header
-export const columnContainerHeader = "Container Header"
+export const pageDescription = "This is the details view description"
 
 // Column Container Definitions
-export const columnContainerDefinitions = [
+export const columnDefinitions = [
   {
     id: "variable",
     header: "Variable name",
@@ -42,7 +36,7 @@ export const columnContainerDefinitions = [
 ];
 
 // Column Container Items
-export const columnContainerItems =[
+export const columnItems =[
   {
     name: "Item 1",
     description: "This is the first item"
@@ -81,17 +75,33 @@ export const tabsContent = [
   }
 ]
 
+// Breadcrumb Group
 export const breadcrumbGroup = [
   { text: "Homepage", href: "/" },
-  { text: "Table View", href: "#/tableview" },
   { text: "Details View", href: "#/detailsview"}
 ]
 
 // Container Header
-export const containerHeader = "This is the DetailsPage container header"
+export const containerHeader = "This is the details view container header"
 
 // Container content
-export const containerDescription = "This is the DetailsPage container description"
+export const containerDescription = "This is the details view container description"
 
-// Container description
-export const containerContent = "This is the DetailsPage container content"
+export const containerContent = <ColumnLayout columns={4} variant="text-grid">
+<div>
+  <Box variant="awsui-key-label">Engine</Box>
+  <div>Oracle Enterprise Edition 12.1.0.2.v7</div>
+</div>
+<div>
+  <Box variant="awsui-key-label">DB instance class</Box>
+  <div>db.t2.large</div>
+</div>
+<div>
+  <Box variant="awsui-key-label">DB instance status</Box>
+  <StatusIndicator type="success">Available</StatusIndicator>
+</div>
+<div>
+  <Box variant="awsui-key-label">Pending maintenance</Box>
+  <div>None</div>
+</div>
+</ColumnLayout>

@@ -21,7 +21,7 @@ import {
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
-import Container from "../../components/Containers/Container";
+import Container from "../../components/Containers/ColumnContainer";
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"

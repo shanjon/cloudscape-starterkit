@@ -3,7 +3,6 @@ import '../../App.css';
 import {
   Button,
   AppLayout,
-  Container,
   Header,
   ColumnLayout,
   Box,
@@ -22,7 +21,6 @@ import {
   containerHeader,
   containerDescription,
   containerContent,
-  columnContainerHeader,
   tabsContent,
   breadcrumbGroup
 } from "./detailsview-config.jsx";
@@ -31,7 +29,7 @@ import {
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
-import ColumnContainer from "../../components/Containers/ColumnContainer"
+import Container from "../../components/Containers/ColumnContainer"
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -50,17 +48,15 @@ function DetailsPage() {
         sideNavPages={sideNavPages}/>}
       content={
       <div>
+      <SpaceBetween size="l">
       <ContentLayout
         pageDescription={pageDescription}
         pageHeader={pageHeader}
-        />
-        <SpaceBetween
-        direction="vertical"
-        size="l"
-        >
-        <ColumnContainer
-        columnContainerHeader={columnContainerHeader}
-      />
+        containerHeader={containerHeader}
+        containerContent={containerContent}
+        
+      >
+      </ContentLayout> 
       
         <Tabs
         tabs={tabsContent}

@@ -7,79 +7,80 @@ import {
 } from "@cloudscape-design/components"
 
 // Page Header
-export const pageHeader = "This is the details page header"
+export const pageHeader = "This is the cards view header"
 
 // Description
-export const pageDescription = "This is the details page description"
+export const pageDescription = "This is the cards view description"
 
 // Column Container Header
-export const columnContainerHeader = "Container Header"
+export const containerHeader = "Selected items"
 
-// Column Container Definitions
-export const columnContainerDefinitions = [
-  {
-    id: "variable",
-    header: "Variable name",
-    cell: e => e.name,
-    sortingField: "name",
-    isRowHeader: true
-  },
-  {
-    id: "value",
-    header: "Text value",
-    cell: e => e.alt,
-    sortingField: "alt"
-  },
-  { id: "type", header: "Type", cell: e => e.type },
-  {
-    id: "description",
-    header: "Description",
-    cell: e => e.description
-  }
-];
+// Container Content
+export const containerContent = "Content"
 
-// Column Container Items
-export const columnContainerItems =[
+// Breadcrumb Group
+export const breadcrumbGroup = [
+  { text: "Homepage", href: "/" },
+  { text: "Cards View", href: "#/cardsview"}
+]
+
+// Card Definition
+export const cardDefinition = { header:e=>e.name,
+  sections:[ { id:"description",
+      header:"Description",
+      content:e=>e.description },
+    { id:"type",
+      header:"Type",
+      content:e=>e.type },
+    { id:"size",
+      header:"Size",
+      content:e=>e.size } ] }
+
+// Card Items
+export const cardItems = [
   {
     name: "Item 1",
-    description: "This is the first item"
+    alt: "First",
+    description: "This is the first item",
+    type: "1A",
+    size: "Small"
   },
   {
     name: "Item 2",
-    description: "This is the second item"
+    alt: "Second",
+    description: "This is the second item",
+    type: "1B",
+    size: "Large"
   },
   {
     name: "Item 3",
-    description: "This is the third item"
+    alt: "Third",
+    description: "This is the third item",
+    type: "1A",
+    size: "Large"
   },
   {
     name: "Item 4",
-    description: "This is the fourth item"
+    alt: "Fourth",
+    description: "This is the fourth item",
+    type: "2A",
+    size: "Small"
+  },
+  {
+    name: "Item 5",
+    alt: "Fifth",
+    description: "This is the fifth item",
+    type: "2A",
+    size: "Large"
+  },
+  {
+    name: "Item 6",
+    alt: "Sixth",
+    description: "This is the sixth item",
+    type: "1A",
+    size: "Small"
   }
 ]
 
-// Tabs Content
-export const tabsContent = [
-  {
-    label: "First tab label",
-    id: "first",
-    content: "First tab content area"
-  },
-  {
-    label: "Second tab label",
-    id: "second",
-    content: "Second tab content area"
-  },
-  {
-    label: "Third tab label",
-    id: "third",
-    content: "Third tab content area",
-    disabled: true
-  }
-]
-
-export const breadcrumbGroup = [
-  { text: "Homepage", href: "/" },
-  { text: "Table View", href: "#/tableview" },
-  { text: "Details View", href: "#/detailsview"}
-]
+// Filtering Placeholder
+export const filteringPlaceholder = "Find resources"
