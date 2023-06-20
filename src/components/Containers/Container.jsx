@@ -7,7 +7,11 @@ import {
     Header
 } from "@cloudscape-design/components";
 
-export default ({containerDescription, containerHeader, containerContent}) => {
+export default ({
+  containerDescription,
+  containerHeader,
+  containerContent
+}) => {
   return (
     <Container
     header={
