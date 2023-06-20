@@ -14,7 +14,6 @@ import {
   containerHeader,
   containerDescription,
   containerContent,
-  testContent
 } from "./anotherone-config.jsx";
 import {
   sideNavHeader,
