@@ -42,8 +42,7 @@ export const PRICE_CLASS_OPTIONS = [
 
 **4. User implements additional customizations as needed**
 
-
-
+## Sample pages
 ### Homepage
 ![Homepage](resources/images/Homepage.png)
 
