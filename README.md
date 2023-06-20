@@ -11,18 +11,22 @@ Starter Kit's ready-made web applications provide clean and consistent branding 
 
 ## User flow
 
-1. User identifies the structure of app they want to build, for example:
+**1. User identifies the structure of app they want to build, for example:**
 - Homepage
 - Table View
 - Details View
 
-2. Template is generated with 2 files for each page:
+**2. Template is generated with 2 files for each page:**
 - `Page.jsx` – contains layout and components for the page
 - `page-config.jsx` – contains customizable configuration for `Page.jsx`
 
-3. User updates `page-config.jsx` with:
+**3. User updates `page-config.jsx` with:**
 - Static data (labels, headers, etc.)
-> `<h1> Solution Name </h1>`
+```
+<h1> Solution Name </h1>
+```
+- Props and attributes (select options, links, etc.)
+
 ```
 export const PRICE_CLASS_OPTIONS = [
 
@@ -36,7 +40,7 @@ export const PRICE_CLASS_OPTIONS = [
 ```
 - Dynamic data pulled via APIs
 
-4. User implements additional customizations as needed
+**4. User implements additional customizations as needed**
 
 
 
