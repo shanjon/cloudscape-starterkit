@@ -13,7 +13,7 @@ import {
   alert,
   containerHeader,
   containerDescription,
-  containerContent,
+  containerContent
 } from "./anotherone-config.jsx";
 import {
   sideNavHeader,
