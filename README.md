@@ -8,6 +8,10 @@ WebUI Starter Kit leverages the Cloudscape Design System and AWS APIs to generat
 
 Starter Kit's ready-made web applications provide clean and consistent branding across PSF solutions, and give clear, prescriptive guidance on how to start developing and delivering product-centric solutions to customers. Because each configuration file defines a clear set of parameters for customization, the templates are accessible for teams with varying levels of technical depth and require minimal time for onboarding and enablement.
 
+## Getting started
+`npm i` <br>
+`npm start` <br>
+App should be running on http://localhost:3000/
 
 ## User flow
 
