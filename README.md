@@ -76,8 +76,8 @@ export const PRICE_CLASS_OPTIONS = [
 
 
 ### Analytics View
+![AnalyticsView1](resources/images/AnalyticsView1.png)
 ![AnalyticsView2](resources/images/AnalyticsView2.png)
-
 
 
 
