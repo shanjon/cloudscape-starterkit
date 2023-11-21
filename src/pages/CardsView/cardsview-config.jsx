@@ -83,4 +83,4 @@ export const cardItems = [
 ]
 
 // Filtering Placeholder
-export const filteringPlaceholder = "Find resources"
+export const filteringPlaceholder = "This is the filtering placeholder"

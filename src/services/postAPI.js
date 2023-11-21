@@ -1,10 +1,10 @@
 import { POST_URL } from "../config.js";
 
 // Send inputs to API Gateway
-const handleSubmit = async (inputPrompt) => {
+const handleSubmit = async (inputPrompt, modelName) => {
     try {
         const prompt = inputPrompt
-        const model_name = "anthropic.claude-instant-v1"
+        const model_name = modelName
         console.log(prompt)
         
         const response = await fetch(POST_URL, {

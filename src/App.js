@@ -16,7 +16,7 @@ import "@cloudscape-design/global-styles/index.css"
 function App() {
   return (
     <div>
-    <Router basename={window.location.pathname || ''}>
+    <Router>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/tableview" element={<TableView />} />

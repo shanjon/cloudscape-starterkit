@@ -1,9 +1,6 @@
 // Page Header
 export const pageHeader = "This is the homepage header"
 
-// Info - leave out for now
-
-
 // Description
 export const pageDescription = "This is the homepage description"
 

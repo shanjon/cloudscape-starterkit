@@ -1,5 +1,5 @@
 // Page Header
-export const pageHeader = "Analytics View"
+export const pageHeader = "This is the analytics view header"
 
 // Description
 export const pageDescription = "This is the analytics view description"

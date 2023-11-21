@@ -1,7 +1,5 @@
-import logo from '../../logo.svg';
 import '../../App.css';
 import {
-  Button,
   AppLayout
 } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
@@ -20,7 +18,6 @@ import {
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
-import Container from "../../components/Containers/Container";
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -32,6 +29,7 @@ function Homepage() {
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      toolsHide="true"
       navigation={<SideNavigation
         sideNavHeader={sideNavHeader}
         sideNavPages={sideNavPages}/>}

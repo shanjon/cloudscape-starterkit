@@ -1,8 +1,8 @@
 // Table Header
-export const tableHeader = "Table Header"
+export const tableHeader = "This is the table view header"
 
 // Table Filter Placeholder
-export const filterPlaceholder = "What are you looking for?"
+export const filterPlaceholder = "This is the filtering placeholder"
 
 // Column Definitions
 export const columnDefinitions = [

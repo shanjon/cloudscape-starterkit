@@ -1,12 +1,6 @@
-import logo from '../../logo.svg';
 import '../../App.css';
 import {
-  Button,
   AppLayout,
-  Header,
-  ColumnLayout,
-  Box,
-  StatusIndicator,
   SpaceBetween,
   Tabs,
   BreadcrumbGroup
@@ -17,9 +11,7 @@ import ContentLayout from "../../components/ContentLayout";
 import {
   pageHeader,
   pageDescription,
-  alert,
   containerHeader,
-  containerDescription,
   containerContent,
   tabsContent,
   breadcrumbGroup
@@ -29,7 +21,6 @@ import {
   sideNavPages
 } from "../../components/SideNavigation/sidenav-config";
 import { topNavHeader, topNavMenu } from "../../components/TopNavigation/topnav-config"
-import Container from "../../components/Containers/ColumnContainer"
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -41,6 +32,7 @@ function DetailsPage() {
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      toolsHide="true"
       breadcrumbs={<BreadcrumbGroup
         items={breadcrumbGroup} />}
       navigation={<SideNavigation

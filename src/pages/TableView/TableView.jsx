@@ -1,14 +1,10 @@
-import logo from '../../logo.svg';
 import '../../App.css';
 import {
-  Button,
   AppLayout,
-  Header,
   BreadcrumbGroup
  } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
 import SideNavigation from "../../components/SideNavigation/SideNav";
-import ContentLayout from "../../components/ContentLayout";
 import {
   tableHeader,
   filterPlaceholder,
@@ -37,6 +33,7 @@ function TableView() {
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      toolsHide="true"
       breadcrumbs={<BreadcrumbGroup
         items={breadcrumbGroup} />}
       navigation={<SideNavigation

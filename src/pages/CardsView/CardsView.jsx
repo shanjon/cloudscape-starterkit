@@ -1,15 +1,7 @@
-import logo from '../../logo.svg';
 import '../../App.css';
 import {
-  Button,
   AppLayout,
-  Container,
-  Header,
-  ColumnLayout,
-  Box,
-  StatusIndicator,
   SpaceBetween,
-  Tabs,
   BreadcrumbGroup
 } from "@cloudscape-design/components"
 import TopNavigation from "../../components/TopNavigation/TopNav";
@@ -18,10 +10,7 @@ import ContentLayout from "../../components/ContentLayout";
 import {
   pageHeader,
   pageDescription,
-  alert,
   containerHeader,
-  containerDescription,
-  containerContent,
   breadcrumbGroup,
   cardItems,
   cardDefinition,
@@ -44,6 +33,7 @@ function CardsView() {
       topNavHeader={topNavHeader}
       topNavMenu={topNavMenu}/>
     <AppLayout
+      toolsHide="true"
       breadcrumbs={<BreadcrumbGroup
         items={breadcrumbGroup} />}
       navigation={<SideNavigation
