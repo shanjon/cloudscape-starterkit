@@ -107,7 +107,7 @@ function Chatbot() {
 				{prompts.map((inputPrompt, index) => (
 					<Fragment key={index}>
 						<PromptContainer prompt={inputPrompt}></PromptContainer>
-						{showResponseContainer && <ResponseContainer promptResponse={responseData}></ResponseContainer>}
+						{showResponseContainer && <ResponseContainer promptResponse="This is the default response"></ResponseContainer>}
           </Fragment>
 				)) }
         <SpaceBetween size="xxs">

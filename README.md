@@ -69,8 +69,18 @@ export const PRICE_CLASS_OPTIONS = [
 ### Cards View
 ![CardsView](resources/images/CardsView.png)
 
+
 ### Chatbot View
-![ChatbotView](resources/images/ChatbotView.png)
+![ChatbotView1](resources/images/ChatbotView1.png)
+![ChatbotView2](resources/images/ChatbotView2.png)
+
 
 ### Analytics View
-![AnalyticsView](resources/images/AnalyticsView.png)
+![AnalyticsView2](resources/images/AnalyticsView2.png)
+
+
+
+
+For Analytics view, use {responseData} for the Lambda response in content of tabs of <Tabs>
+
+For Chatbot, replace "This is the default response" with		{showResponseContainer && <ResponseContainer promptResponse={responseData}></ResponseContainer>}

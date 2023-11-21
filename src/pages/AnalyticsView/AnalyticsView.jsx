@@ -66,7 +66,6 @@ function AnalyticsView() {
             const response = await handleSubmit(inputPrompt);
             console.log("response is " + response)
             setResponseData(response);
-            console.log(responseData)
             setLoadOutput(false); // hide Spinner once response has been received
             setShowOutput(true); // show Output once response has been received
           } catch (error) {
@@ -148,17 +147,17 @@ function AnalyticsView() {
                   {
                     label: "Output 1",
                     id: "output-1",
-                    content: (<>{responseData}</>)
+                    content: (<>This is the text for Output 1</>)
                   },
                   {
                     label: "Output 2",
                     id: "output-2",
-                    content: (<>{responseData}</>)
+                    content: (<>This is the text for Output 2</>)
                   },
                   {
                     label: "Output-3",
                     id: "output-3",
-                    content: (<>{responseData}</>)
+                    content: (<>This is the text for Output 3</>)
                   }
                 ]}
               />}
