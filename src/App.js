@@ -1,15 +1,14 @@
 // Elements, Hooks
-import logo from './logo.svg';
 import './App.css';
-import { Route, Routes, useParams, BrowserRouter as Router } from "react-router-dom";
-import { Link } from "react-router";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 // Components
 import Homepage from './pages/Homepage/Homepage';
 import TableView from './pages/TableView/TableView';
 import DetailsView from './pages/DetailsView/DetailsView';
 import CardsView from './pages/CardsView/CardsView';
-import AnotherOne from './pages/AnotherOne/AnotherOne';
+import Chatbot from './pages/Chatbot/Chatbot';
+import AnalyticsView from './pages/AnalyticsView/AnalyticsView';
 
 // Styles
 import "@cloudscape-design/global-styles/index.css"
@@ -23,7 +22,8 @@ function App() {
         <Route path="/tableview" element={<TableView />} />
         <Route path="/detailsview" element={<DetailsView />} />
         <Route path="/cardsview" element={<CardsView />} />
-        <Route path="/anotherone" element={<AnotherOne />} />
+        <Route path="/chatbotview" element={<Chatbot />} />
+        <Route path="/analyticsview" element={<AnalyticsView />} />
       </Routes>
     </Router>
     </div>

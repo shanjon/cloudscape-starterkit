@@ -1,0 +1,1 @@
+export const POST_URL='https://8x0cnrg5o2.execute-api.us-east-1.amazonaws.com/hello'
