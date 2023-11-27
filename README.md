@@ -1,6 +1,6 @@
 # WebUI Starter Kit
 
-WebUI Starter Kit is a build asset for AWS Solution Building Enablement. It provides modular templates with low-code, configurable files for building web applications connected to AWS services. It is a self-service tool intended to reduce development effort for partners and accelerate completion of the Design & Build Phase of SBE.
+WebUI Starter Kit is a build asset for AWS Solution Building Enablement. It provides modular templates with low-code, configurable files for building web applications connected to AWS services. It is a self-service tool intended to reduce development effort for partners and accelerate completion of the Design & Build Phase of Solution Building Enablement.
 
 ## How it works
 
@@ -77,6 +77,6 @@ export const POST_URL='https://XXXXXXXX.execute-api.us-east-1.amazonaws.com/rout
 ![AnalyticsView2](resources/images/AnalyticsView2.png)
 
 ## Getting started and configuration
-For instructions on cloning and running the application, read `docs/getting_started.md` or click [here](https://github.com/aws-samples/webui-starter-kit/docs/getting_started.md).
+For instructions on cloning and running the application, read `docs/getting_started.md` or click [here](https://github.com/shanjon/cloudscape-starterkit/blob/main/docs/getting_started.md).
 
-For instructions on how to configure each page, read `docs/pages` or click [here](https://github.com/aws-samples/webui-starter-kit/docs/pages).
+For instructions on how to configure each page, read `docs/pages` or click [here](https://github.com/shanjon/cloudscape-starterkit/tree/main/docs/pages).
