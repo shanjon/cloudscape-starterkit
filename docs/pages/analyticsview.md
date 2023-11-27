@@ -42,12 +42,13 @@ This page is set up to allow a request to be made to API Gateway, which is then 
 
 ![Reference architecture example](../../resources/images/Chatbot-ref-architecture.png)
 
-The POST API request is executed via the `handleSubmit` function in `Chatbot.jsx`, which is imported from `src/services/postAPI.js`. The `postAPI.js` file imports the API Gateway URL as `POST_URL` from `src/config.js`.
+The POST API request is executed via the `handleSubmit` function in `Chatbot.jsx`, which is imported from `src/services/postAPI.js`. The `postAPI.js` file imports the API Gateway URL as `POST_URL` from `src/config.js`. <br>
 
 In order to configure the AnalyticsView for dynamic prompt responses:
 
 1. Create a POST API in [Amazon API Gateway](https://aws.amazon.com/api-gateway/) and update the `POST_URL` in `src/config.js`.
 > Note: You may want to add `config.js ` to `.gitignore` to prevent unintended access to the invoke URL.
+<br>
 
 2. Create a function in [AWS Lambda](https://aws.amazon.com/lambda/) and set the API you just created as a trigger for the function. The Lambda function should expect the following parameters:
 - `inputPrompt`
@@ -58,6 +59,7 @@ The response from the Lambda function should be stored as `response` in order to
 `inputPrompt` is the input passed to Chatbot UI via the input text area, and `modelName` is the name of the model selected on the side panel. The response received should be stored as `repsonse`.
 
 > Note: You will likely need to update the timeout of the Lambda function in order to allow sufficient time to call the LLM and receive a response. It will also need permission to call the model (i.e., Bedrock, SageMaker), if using an AWS service.
+<br>
 
 3. Update `tabs` in `src/pages/AnalyticsView/AnalyticsView.jsx` with the response object `{responseData}`.
 
