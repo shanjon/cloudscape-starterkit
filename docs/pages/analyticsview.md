@@ -40,7 +40,7 @@ When a prompt is passed via the input component, the default response value is a
 
 This page is set up to allow a request to be made to API Gateway, which is then passed to a Lambda function, which can then be sent to a Large Language Model (e.g., via Amazon Bedrock, OpenAI API, etc.) and then render the response returned - for example:
 
-![Reference architecture example](../../resources/images/Chatbot-ref-architecture.png.png)
+![Reference architecture example](../../resources/images/Chatbot-ref-architecture.png)
 
 The POST API request is executed via the `handleSubmit` function in `Chatbot.jsx`, which is imported from `src/services/postAPI.js`. The `postAPI.js` file imports the API Gateway URL as `POST_URL` from `src/config.js`.
 
